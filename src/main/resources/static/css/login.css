@@ -1,14 +1,15 @@
-.wrapper {    
+.wrapper {
 	margin-top: 80px;
 	margin-bottom: 20px;
+    background-color: #ddd
 }
 
 .form-signin {
   max-width: 420px;
   padding: 30px 38px 66px;
   margin: 0 auto;
-  background-color: #eee;
-  border: 3px dotted rgba(0,0,0,0.1);  
+    background-color: #f1f1f1;
+
   }
 
 .form-signin-heading {

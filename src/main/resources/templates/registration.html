@@ -1,46 +1,112 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<!--<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<style>
+	.header {
+		overflow: hidden;
+		background-color: #f1f1f1;
+		padding: 10px 10px;}
+	.header a {
+		float: left;
+		color: black;
+		text-align: center;
+		padding: 12px;
+		text-decoration: none;
+		font-size: 18px;
+		line-height: 15px;
+		border-radius: 4px;
+	}
+	.header-right {
+		float: right;
+	}
+
+	.validation-message {
+		font-style: normal;
+		font-size: 12px;
+		color: #FF1C19;
+	}
+	.wrapper {
+		margin-top: 80px;
+		margin-bottom: 20px;
+		background-color: #ddd
+	}
+
+	.form-signin {
+		max-width: 420px;
+		padding: 30px 38px 66px;
+		margin: 0 auto;
+		background-color: #f1f1f1;
+
+	}
+
+	.form-signin-heading {
+		text-align:center;
+		margin-bottom: 30px;
+	}
+
+	.form-control {
+		position: relative;
+		font-size: 16px;
+		height: auto;
+		padding: 10px;
+	}
+
+	input[type="text"] {
+		margin-bottom: 0px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+		margin-bottom: 20px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+</style>
 <head>
-	<title>Registration Form</title>
+	<title>Spring Security Tutorial</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<form th:action="@{/}" method="get">
-		<button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
-	</form>	
-	
+<div>
+	<body>
+	<div class="header">
+		<a class="logo">Регистрация</a>
+		<div class="header-right">
+			<a href="index" style="text-decoration: none; background-color: #ddd; font-size:12px;margin: 0 1rem">Главная</a>
+			<a href="login" style="text-decoration: none; background-color: #ddd; font-size:12px; margin: 0 1rem">Вход</a>
+		</div>
+	</div>
+	<div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-6 col-md-offset-3" align="centr">
 				<form autocomplete="off" action="#" th:action="@{/registration}"
-					th:object="${user}" method="post" class="form-horizontal"
-					role="form">
-					<h2>Registration Form</h2>
+					  th:object="${user}" method="post" class="form-horizontal"
+					  role="form">
 					<div class="form-group">
 						<div class="col-sm-9">
-						<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
-								class="validation-message"></label>
-						<input type="text" th:field="*{name}" placeholder="Name"
-								class="form-control" /> 
+							<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+								   class="validation-message"></label>
+							<input type="text" th:field="*{name}" placeholder="Имя"
+								   class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-sm-9">
-						<label	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
-								class="validation-message"></label>
+							<label	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+									  class="validation-message"></label>
 							<input type="text" th:field="*{lastName}"
-								placeholder="Last Name" class="form-control" /> 
+								   placeholder="Фамилия" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-9">
-							<input type="text" th:field="*{email}" placeholder="Email"
-								class="form-control" /> <label
+							<input type="text" th:field="*{email}" placeholder="E-mail"
+								   class="form-control" /> <label
 								th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 								class="validation-message"></label>
 						</div>
@@ -48,7 +114,7 @@
 					<div class="form-group">
 						<div class="col-sm-9">
 							<input type="password" th:field="*{password}"
-								placeholder="Password" class="form-control" /> <label
+								   placeholder="Пароль" class="form-control" /> <label
 								th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
 								class="validation-message"></label>
 						</div>
@@ -59,14 +125,90 @@
 							<button type="submit" class="btn btn-primary btn-block">Register User</button>
 						</div>
 					</div>
-					
 					<span th:utext="${successMessage}"></span>
-					
-					
 				</form>
 			</div>
+	</div>
 		</div>
 	</div>
 
-</body>
+
+	</body>
+</div>
+</html>-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<style>
+	.header {
+		overflow: hidden;
+		background-color: #f1f1f1;
+		padding: 10px 10px;}
+	.header a {
+		float: left;
+		color: black;
+		text-align: center;
+		padding: 12px;
+		text-decoration: none;
+		font-size: 18px;
+		line-height: 15px;
+		border-radius: 4px;
+	}
+	.header-right {
+		float: right;
+	}
+	body {
+		background-image: url("http://www.delo360.ru/uploads/posts/2015-01/1422113472_2.jpg");
+	}
+</style>
+<head>
+	<title>Spring Security Tutorial</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<div>
+	<body>
+	<div class="header">
+		<a class="logo" style="text-decoration: none">Регистрация</a>
+		<div class="header-right">
+			<a href="index" style="text-decoration: none; background-color: #ddd; font-size:12px;margin: 0 1rem">Главная &nbsp;&nbsp;</a>
+			<a href="login" style="text-decoration: none; background-color: #ddd; font-size:12px; margin: 0 1rem">Вход</a>
+		</div>
+	</div>
+	<div class="container">
+		<!--<img th:src="@{/images/fon.jpg}" class="img-responsive center-block" width="300" height="300" alt="Logo" />-->
+		<form utocomplete="off" action="#" th:action="@{/registration}"
+			  th:object="${user}" method="post" class="form-signin"
+			  role="form">
+			<h3 class="form-signin-heading">Регистрация</h3>
+			<br/>
+
+			<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+				   class="validation-message"></label>
+			<input type="text" th:field="*{name}" placeholder="Имя"
+				   class="form-control" />
+			<label	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+					  class="validation-message"></label>
+			<br/>
+			<input type="text" th:field="*{lastName}"
+				   placeholder="Фамилия" class="form-control" />
+			<br/>
+			<input type="text" th:field="*{email}" placeholder="E-mail"
+				   class="form-control" />
+			<label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+					class="validation-message"></label>
+			<br/>
+			<input type="password" th:field="*{password}"
+					   placeholder="Пароль" class="form-control" />
+			<label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+					class="validation-message"></label>
+			<button type="submit" class="btn btn-primary btn-block" style="background-color: gray;border: 0;">Зарегистрироваться</button>
+			<span th:utext="${successMessage}"></span>
+		</form>
+	</div>
+	</body>
+</div>
 </html>
